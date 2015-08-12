@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    
+  </head>
+  <body ng-controller="gitpr">
+    <div id="w">
+      <div> <h1>Your First Pull Requets</h1>
+        <input type="text" id="gitusername" ng-model="username" placeholder="Githubs username...">
+        <a href="#" id="gitsubmitbtn" ng-click="getGitInfo()" >Search</a>
+        <div id="gitapidata" class="clearfix"></div>
+      </div>
+      <div ng-show="useNotFound">
+        <h2>No User Info Found</h2>
+      </div>
+      <div ng-show="loaded">
+        <h2>  {{use.total_count}}
+        <div ng-repeat="bb in use.items">
+          {{bb.title}} {{bb.user.login}}
+          <div ng-repeat="aa in bb.user">{{aa.login}}</div>
+          </h2>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        
+        <script type="text/javascript" src="main.js"></script>
+      </body>
+    </html>
