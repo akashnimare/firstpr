@@ -1,7 +1,9 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="timeagoApp">
   <head>
     <link rel="stylesheet" type="text/css" href="main.css">
+    
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.css' type='text/css' media='all' />
     
   </head>
   <body ng-controller="gitpr">
@@ -17,12 +19,20 @@
       <div ng-show="loaded">
         <h2>  {{use.total_count}}
         <div ng-repeat="bb in use.items">
-          {{bb.title}} {{bb.user.login}}
+          {{bb.title}} <br>
+          {{bb.user.login}}
+          <br>
+          
+          <td>{{bb.created_at | timeago}}</td>
           <div ng-repeat="aa in bb.user">{{aa.login}}</div>
           </h2>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-animate.min.js"></script>
         
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.js'></script>
         <script type="text/javascript" src="main.js"></script>
+        <script src="ngtimeago.js"></script>
+        
       </body>
     </html>
