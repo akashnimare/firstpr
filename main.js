@@ -1,3 +1,6 @@
+'use strict';
+var myapp = angular.module('gitapp', ['ngtimeago','angular-loading-bar']);
+
 function gitpr($scope, $http) {
       $scope.getGitInfo = function () {
          $scope.userNotFound = false;
